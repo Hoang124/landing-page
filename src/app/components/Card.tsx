@@ -2,7 +2,17 @@ import Image from 'next/image';
 import TagNew from 'public/assets/tag-new.svg';
 import TagHot from 'public/assets/tag-hot.svg';
 
-const Card = (props: any) => {
+interface ICard {
+    title: string,
+    tag: string,
+    imgSrc: string,
+}
+
+interface IProps {
+    game: ICard;
+}
+
+const Card = (props: IProps) => {
     const { game } = props;
 
     return (

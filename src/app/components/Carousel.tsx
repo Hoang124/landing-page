@@ -15,7 +15,7 @@ const banners = [
         btnText: "JOIN AND WIN",
         imgSrc: "/assets/carousel1.png",
         description: "",
-        backGroudColor: "linear-gradient(64.92deg, #147261 27.03%, #082C25 78.3%)",
+        backgroudColor: "linear-gradient(64.92deg, #147261 27.03%, #082C25 78.3%)",
     },
     {
         tag: "CashBack",
@@ -24,7 +24,7 @@ const banners = [
         btnText: "Discover More",
         imgSrc: "/assets/carousel2.png",
         description: "See your best cashback offers for Slots, Live Games, and Crash Games. Play and get your money back daily!",
-        backGroudColor: "linear-gradient(64.92deg, #0E2966 27.03%, #081B36 78.3%)",
+        backgroudColor: "linear-gradient(64.92deg, #0E2966 27.03%, #081B36 78.3%)",
     },
     {
         tag: "CashBack",
@@ -33,7 +33,7 @@ const banners = [
         btnText: "Discover More",
         imgSrc: "/assets/carousel2.png",
         description: "See your best cashback offers for Slots, Live Games, and Crash Games. Play and get your money back daily!",
-        backGroudColor: "linear-gradient(64.92deg, #0E2966 27.03%, #081B36 78.3%)",
+        backgroudColor: "linear-gradient(64.92deg, #0E2966 27.03%, #081B36 78.3%)",
     },
 ];
 

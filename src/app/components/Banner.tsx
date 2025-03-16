@@ -1,12 +1,26 @@
 import Image from "next/image";
 import Infor from "public/assets/infor.svg";
 
-const Banner = (props: any) => {
+interface IBanner {
+    tag: string,
+    title: string,
+    subTitle: string,
+    btnText: string,
+    imgSrc: string,
+    description: string,
+    backgroudColor: string,
+}
 
-    const { banner } = props
+interface IProps {
+    banner: IBanner;
+}
+
+const Banner = (props: IProps) => {
+    const { banner } = props;
+
     return (
         <div className="banner banner-rotate"
-            style={{ background: banner.backGroudColor }}>
+            style={{ background: banner.backgroudColor }}>
             {/* Left Content */}
             <div className="content-left">
                 <span className="banner-tag">
