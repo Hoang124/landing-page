@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #03193A;
+  --foreground: #CAD3E1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Font 1", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin: auto;
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 67.8px;
+  background-color: #03193A;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  border-bottom: 0.8px solid rgba(245, 249, 255, 0.05);
+  box-shadow: 0px 9px 35px 0px rgba(3, 25, 58, 0.4);
+}
+
+.swiper-slide .banner-rotate {
+  /* transform-style: preserve-3d; */
+  transform: perspective(1300px) rotateX(4deg);
+  transition: transform 0.5s ease;
+  opacity: 0.2px;
+  background-color: black;
+}
+
+.swiper-slide-active .banner-rotate {
+  transform-style: preserve-3d;
+  transform: perspective(1300px) rotateX(-3deg);
+  transition: transform 0.5s ease;
+  opacity: 1;
+  scale: 1.1;
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .body-content {
+    @apply max-w-[1440px] w-full mx-auto px-4;
+  }
+
+  /* css for header */
+  /* .header {
+    @apply flex items-center justify-between py-4 px-60 w-full h-[67.8px] fixed top-0 shadow-[0px_9px_35px_0px_rgba(3, 25, 58, 0.4)] border-b-[0.8px] border-[rgba(245, 249, 255, 0.05)];
+  } */
+
+  /* css for button login and register*/
+  .btn-text {
+    @apply font-normal text-[14px] leading-[15.4px] tracking-[0.42px] text-center align-middle uppercase;
+  }
+
+  .btn-login {
+    @apply w-fit h-[34px] rounded-[10px] py-[9.3px] px-[12px] bg-[#12294A];
+  }
+
+  .btn-register {
+    @apply w-fit h-[34px] rounded-[10px] py-[9.3px] px-[12px] bg-[#01AF70];
+  }
+
+  /* css for carousel */
+  .carousel {
+    @apply relative w-full mt-8 [perspective:1200px];
+  }
+
+  .carousel .swiper {
+    @apply lg:overflow-visible pt-8
+  }
+
+  .carousel .swiper-pagination {
+    @apply bottom-0;
+  }
+
+  /* css for slide */
+  .carousel .swiper-slide {
+    @apply h-[390px] origin-center;
+  }
+
+  .swiper-slide img {
+    @apply w-full h-full object-cover;
+  }
+
+  /* @media (min-width: 1024px) {
+    .carousel .swiper-slide-active {
+      transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) !important;
+      z-index: 10;
+    }
+  } */
+
+  /* css for banner */
+  .banner {
+    @apply relative flex flex-col lg:flex-row flex-col-reverse items-center justify-between rounded-2xl h-full w-full lg:box-border;
+  }
+
+  .content-left {
+    @apply relative w-full lg:w-1/2 lg:h-full h-2/3 flex flex-1 items-center justify-center flex-col rounded-2xl;
+  }
+
+  .banner-tag {
+    @apply block bg-white/20 font-semibold lg:text-[21px] text-[12px] lg:leading-[29.4px] leading-[16.8px] text-center align-middle w-fit lg:h-[41px] h-[25px] rounded-[79px] px-[16.4px] pt-[5.9px] pb-[5.7px] mb-2;
+  }
+
+  .banner-title,
+  .banner-subtitle {
+    @apply lg:font-extrabold lg:text-[2.625rem] lg:leading-[58.8px] font-medium text-[1.5rem] leading-[31.2px] text-center align-middle;
+  }
+
+  .banner-btn {
+    @apply mt-6 px-6 py-3 bg-[#ff3366] text-white font-bold rounded-lg lg:text-[21px] text-[15px];
+  }
+
+  .content-right {
+    @apply relative w-full lg:w-1/2 lg:h-full h-[50%] rounded-2xl;
+  }
+
+  .banner-info {
+    @apply absolute lg:top-4 lg:right-4 top-12 right-3;
+  }
+
+  /* css for menu */
+  .menu-container {
+    @apply flex justify-between h-[87px] mt-20 border-white/10 border-b-[1px];
+  }
+
+  .menu-text {
+    @apply text-white font-normal text-[16px] leading-[22.4px] align-middle;
+  }
+
+  .menu-item {
+    @apply flex justify-center lg:w-[197.14px] w-[116px] h-[57px] rounded-[10px] border-white/10 border-[1px] gap-[13px] px-4 py-4;
+  }
+
+  .menu-item:hover {
+    @apply bg-[#12294A];
+  }
+
+  /* css for card */
+  .exclusive-card {
+    @apply mt-10;
+  }
+
+  .exclusive-card__header {
+    @apply flex items-center justify-between;
+  }
+
+  .exclusive-card__title {
+    @apply font-medium lg:text-[32px] text-[14px] tracking-[0.84px] align-middle uppercase;
+  }
+
+  .see-all__tag {
+    @apply text-white font-normal lg:text-[15px] text-[14px] leading-[21px] align-middle;
+  }
+
+  .card-container {
+    @apply flex gap-4 mt-8;
+  }
+
+  .card {
+    @apply max-w-[156px] h-[210px] rounded-lg;
+  }
+
+  .card-tag {
+    @apply absolute top-4 -left-1 z-10;
+  }
+
+  .card-title {
+    @apply absolute z-10 font-medium text-[8px] leading-[8px] tracking-[1.12px] align-middle uppercase bottom-1 w-full text-center;
+  }
+
+  /* css for provider */
+  .providers {
+    @apply mt-10;
+  }
+
+  .providers__header {
+    @apply flex items-center justify-between;
+  }
+
+  .providers__title {
+    @apply font-medium lg:text-[32px] text-[14px] leading-[100%] align-middle uppercase;
+  }
+
+  .providers-container {
+    @apply flex gap-3 h-full w-full mt-8 justify-center;
+  }
+
+  .provider__item {
+    @apply relative flex flex-col w-[9.75rem] h-[7.625rem] rounded-lg justify-between rounded-lg;
+  }
+
+  .provider__img-container {
+    @apply bg-[#112B4E] h-[50%] flex items-center justify-center rounded-t-lg;
+  }
+
+  .provider__info {
+    @apply bg-[#12294A] flex flex-col items-center justify-center text-center bg-[#F5F9FF0D] h-[50%] rounded-b-lg;
+  }
+
+  .provider__name {
+    @apply font-normal text-[13px] leading-[18.2px] align-middle underline text-white;
+  }
+
+  .provider__number-of-game {
+    @apply font-normal text-[11px] leading-[11px] align-middle underline text-[#90A2BD];
+  }
+
+  .providers-container .swiper-slide {
+    @apply w-[9.75rem] h-[7.625rem] !important;
+  }
+
+  /* css for footer */
+  .footer {
+    @apply bg-[#12294A] w-full mt-8 py-12 text-white;
+  }
+
+  .footer__container {
+    @apply container mx-auto px-4 grid-cols-5 gap-8 max-w-[1440px];
+  }
+
+  .footer h3 {
+    @apply font-medium text-xl leading-[31.2px] align-middle mb-2;
+  }
+
+  .footer h4 {
+    @apply font-medium text-[15px] leading-[21px] align-middle mb-5;
+  }
+
+  .footer p {
+    @apply font-normal text-[15px] leading-[21px] align-middle text-[#90A2BD] mb-2;
+  }
+
+  .footer li {
+    @apply font-normal text-[15px] leading-[21px] align-middle text-[#90A2BD] lg:hover:underline;
+  }
+
+  .footer ul {
+    @apply space-y-5;
+  }
+
+  .footer .help-btn {
+    @apply w-[200px] h-[40px] rounded-[10px] px-[54.16px] py-[12.85px] bg-[#3555FF] mb-10;
+  }
+
+  .footer__app-container {
+    @apply flex flex-col gap-4 w-[200px] h-[125px] absolute right-0;
+  }
+
+  .footer__app {
+    @apply flex items-center space-x-2 bg-[#1A3157] rounded-[8px] px-[10px] py-[6px];
+  }
+
+  .footer__app-half {
+    @apply flex-col items-center w-[50%];
+  }
+
+  .footer__app:hover .footer__app-text {
+    @apply text-white;
+  }
+
+  .footer__app-text {
+    @apply font-normal text-[15px] leading-[21px] align-middle text-[#90A2BD];
+  }
+
+  .footer-drop-down {
+    @apply w-full p-2 rounded-[10px] bg-[#1A3157];
+  }
+
+  .footer-drop__btn {
+    @apply flex justify-between items-center w-full
+  }
+
+  .footer-icon-btn {
+    @apply flex w-full justify-center items-center gap-4 bg-[#1A3157] rounded-xl;
+  }
+}
