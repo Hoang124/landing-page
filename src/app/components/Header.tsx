@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 import Menu from 'public/assets/menu.svg';
 import Logo from 'public/assets/logo.svg';
 import Search from 'public/assets/search.svg';
@@ -15,7 +15,7 @@ const items = [
 const Header = () => {
     return (
         <header className="header">
-            <nav className='header-content'>
+            <div className='header-content'>
                 <div className="flex items-center justify-between p-4 gap-[57px]">
                     <div className='flex items-center gap-1.5'>
                         <Menu />
@@ -34,7 +34,7 @@ const Header = () => {
                     <button className='btn-login btn-text'>LOGIN</button>
                     <button className='btn-register btn-text'>REGISTRATION</button>
                 </div>
-            </nav>
+            </div>
         </header>
     );
 }

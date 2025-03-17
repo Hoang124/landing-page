@@ -157,7 +157,7 @@ body {
   }
 
   .menu-item {
-    @apply flex justify-center lg:w-[197.14px] w-[116px] h-[57px] rounded-[10px] border-white/10 border-[1px] gap-[13px] px-4 py-4;
+    @apply flex relative justify-center lg:w-[197.14px] w-[116px] h-[57px] rounded-[10px] border-white/10 border-[1px] gap-[13px] px-4 py-4;
   }
 
   .menu-item:hover {
@@ -220,6 +220,10 @@ body {
 
   .provider__img-container {
     @apply bg-[#112B4E] h-[50%] flex items-center justify-center rounded-t-lg;
+  }
+
+  .provider__img {
+    @apply w-[90px] h-[30px] relative;
   }
 
   .provider__info {

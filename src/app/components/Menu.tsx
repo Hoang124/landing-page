@@ -1,9 +1,21 @@
 'use client';
 
 import { useState, useEffect } from "react";
+// import Image from "next/image";
+import Diamond from "public/assets/diamond.svg";
+import Vip from "public/assets/vip.svg";
+import Promotion from "public/assets/promotion.svg";
+import HotMatch from "public/assets/hotmatch.svg";
+import Transaction from "public/assets/transaction.svg";
+import Games from "public/assets/games.svg";
+import Providers from "public/assets/providers.svg";
+import Search from "public/assets/search.svg";
+
 
 const Menu = () => {
-    const [width, setWidth] = useState(window.innerWidth);
+    const [width, setWidth] = useState(() =>
+        typeof window !== "undefined" ? window.innerWidth : 0
+    );
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
@@ -15,44 +27,44 @@ const Menu = () => {
     const menuItems = width > 1024 ? [
         {
             title: "Diamond",
-            icon: "/assets/diamond.svg",
+            icon: <Diamond />,
         },
         {
             title: "VIP",
-            icon: "/assets/vip.svg",
+            icon: <Vip />,
         },
         {
             title: "Promotion",
-            icon: "/assets/promotion.svg",
+            icon: <Promotion />,
         },
         {
             title: "Hot Match",
-            icon: "/assets/hotmatch.svg",
+            icon: <HotMatch />,
         },
         {
             title: "P2P Transaction",
-            icon: "/assets/transaction.svg",
+            icon: <Transaction />,
         },
         {
             title: "Games",
-            icon: "/assets/games.svg",
+            icon: <Games />,
         },
         {
             title: "Providers",
-            icon: "/assets/providers.svg",
+            icon: <Providers />,
         },
     ] : [
         {
             title: "Search",
-            icon: "/assets/search.svg",
+            icon: <Search />,
         },
         {
             title: "Games",
-            icon: "/assets/games.svg",
+            icon: <Games />,
         },
         {
             title: "Providers",
-            icon: "/assets/providers.svg",
+            icon: <Providers />,
         },
     ]
     return (
@@ -60,7 +72,7 @@ const Menu = () => {
             {
                 menuItems.map((item, index) => (
                     <div key={index} className="menu-item">
-                        <img src={item.icon} alt="icon" />
+                        {item.icon}
                         <span>{item.title}</span>
                     </div>
                 ))

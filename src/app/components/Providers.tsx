@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -71,7 +72,9 @@ const Providers = () => {
                         <SwiperSlide key={index}>
                             <div className="provider__item">
                                 <div className="provider__img-container">
-                                    <img src={provider.imgSrc} alt={provider.name} className="provider__img" />
+                                    <div className="provider__img">
+                                        <Image src={provider.imgSrc} layout="fill" alt={provider.name} />
+                                    </div>
                                 </div>
                                 <div className="provider__info">
                                     <p className="provider__name">{provider.name}</p>
