@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -38,27 +39,54 @@ const banners = [
 ];
 
 const Carousel = () => {
+    const [width, setWidth] = useState(() =>
+        typeof window !== "undefined" ? window.innerWidth : 1024
+    );
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const swiperStyle = width >= 1024 ?
+        {
+            loop: true,
+            grabCursor: true,
+            centeredSlides: true,
+            initialSlide: 0,
+            spaceBetween: 150,
+            slidesPerView: 1.5,
+            effect: "coverflow",
+            // autoplay: {
+            //     delay: 3000,
+            //     disableOnInteraction: false,
+            // },
+            coverflowEffect: {
+                rotate: 1,
+                stretch: 10,
+                depth: 20,
+                modifier: 1,
+                slideShadows: false,
+            },
+            modules: [EffectCoverflow, Autoplay]
+        } :
+        {
+            loop: true,
+            grabCursor: true,
+            centeredSlides: true,
+            initialSlide: 0,
+            spaceBetween: 50,
+            slidesPerView: 1,
+            pagination: { clickable: true },
+            modules: [Pagination]
+        }
 
     return (
         <div className="carousel">
             <Swiper
-                loop={true}
-                grabCursor={true}
-                centeredSlides={true}
-                spaceBetween={100}
-                pagination={{ clickable: true }}
-                initialSlide={0}
-                effect={'coverflow'}
-                slidesPerView={1.5}
-                coverflowEffect={{
-                    rotate: 1,
-                    stretch: 10,
-                    depth: 20,
-                    modifier: 1,
-                    slideShadows: false,
-                }}
-
-                modules={[EffectCoverflow, Autoplay, Pagination]}
+                {...swiperStyle}
                 className="lg:w-full h-full"
             >
                 {banners.map((banner, index) => (

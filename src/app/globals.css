@@ -44,17 +44,21 @@ body {
   box-shadow: 0px 9px 35px 0px rgba(3, 25, 58, 0.4);
 }
 
+.swiper-slide {
+  transform-origin: center center
+}
+
 .swiper-slide .banner-rotate {
-  /* transform-style: preserve-3d; */
-  transform: perspective(1300px) rotateX(4deg);
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(4deg);
   transition: transform 0.5s ease;
-  opacity: 0.2px;
+  opacity: 0.5;
   background-color: black;
 }
 
 .swiper-slide-active .banner-rotate {
   transform-style: preserve-3d;
-  transform: perspective(1300px) rotateX(-3deg);
+  transform: perspective(1200px) rotateX(-3deg);
   transition: transform 0.5s ease;
   opacity: 1;
   scale: 1.1;
@@ -75,6 +79,22 @@ body {
     @apply flex items-center justify-between py-4 px-60 w-full h-[67.8px] fixed top-0 shadow-[0px_9px_35px_0px_rgba(3, 25, 58, 0.4)] border-b-[0.8px] border-[rgba(245, 249, 255, 0.05)];
   } */
 
+  .header-nav {
+    @apply flex items-center justify-between p-4 gap-[57px];
+  }
+
+  .header .nav-link {
+    @apply font-medium text-sm leading-[19.6px] tracking-[0.42px] align-middle uppercase;
+  }
+
+  .header-nav:hover {
+    @apply cursor-pointer;
+  }
+
+  .nav-link:hover {
+    @apply text-yellow-400;
+  }
+
   /* css for button login and register*/
   .btn-text {
     @apply font-normal text-[14px] leading-[15.4px] tracking-[0.42px] text-center align-middle uppercase;
@@ -89,12 +109,13 @@ body {
   }
 
   /* css for carousel */
+
   .carousel {
-    @apply relative w-full mt-8 [perspective:1200px];
+    @apply relative w-full mt-8 pt-4 pb-4 px-8 lg:px-0 [perspective:1200px] overflow-hidden;
   }
 
   .carousel .swiper {
-    @apply lg:overflow-visible pt-8
+    @apply overflow-visible pt-8;
   }
 
   .carousel .swiper-pagination {
@@ -109,13 +130,6 @@ body {
   .swiper-slide img {
     @apply w-full h-full object-cover;
   }
-
-  /* @media (min-width: 1024px) {
-    .carousel .swiper-slide-active {
-      transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) !important;
-      z-index: 10;
-    }
-  } */
 
   /* css for banner */
   .banner {
@@ -140,7 +154,7 @@ body {
   }
 
   .content-right {
-    @apply relative w-full lg:w-1/2 lg:h-full h-[50%] rounded-2xl;
+    @apply relative w-full lg:w-1/2 lg:h-full h-[50%] rounded-2xl -mt-10 lg:mt-0;
   }
 
   .banner-info {
@@ -157,11 +171,11 @@ body {
   }
 
   .menu-item {
-    @apply flex relative justify-center lg:w-[197.14px] w-[116px] h-[57px] rounded-[10px] border-white/10 border-[1px] gap-[13px] px-4 py-4;
+    @apply flex relative items-center justify-center lg:w-[197.14px] w-[116px] h-[57px] rounded-[10px] border-white/10 border-[1px] gap-[13px] lg:p-4 p-1;
   }
 
   .menu-item:hover {
-    @apply bg-[#12294A];
+    @apply bg-[#12294A] cursor-pointer;
   }
 
   /* css for card */
@@ -174,7 +188,7 @@ body {
   }
 
   .exclusive-card__title {
-    @apply font-medium lg:text-[32px] text-[14px] tracking-[0.84px] align-middle uppercase;
+    @apply font-medium lg:text-[32px] text-[14px] tracking-[0.84px] align-middle uppercase lg:normal-case;
   }
 
   .see-all__tag {
@@ -207,7 +221,7 @@ body {
   }
 
   .providers__title {
-    @apply font-medium lg:text-[32px] text-[14px] leading-[100%] align-middle uppercase;
+    @apply font-medium lg:text-[32px] text-[14px] leading-[100%] align-middle uppercase lg:normal-case;
   }
 
   .providers-container {
@@ -272,11 +286,11 @@ body {
   }
 
   .footer .help-btn {
-    @apply w-[200px] h-[40px] rounded-[10px] px-[54.16px] py-[12.85px] bg-[#3555FF] mb-10;
+    @apply w-[12.5rem] h-[2.5rem] rounded-[10px] px-[54.16px] py-[12.85px] bg-[#3555FF] mb-10;
   }
 
   .footer__app-container {
-    @apply flex flex-col gap-4 w-[200px] h-[125px] absolute right-0;
+    @apply flex flex-col gap-4 w-[12.5rem] h-[125px] absolute right-0;
   }
 
   .footer__app {

@@ -73,7 +73,7 @@ const Providers = () => {
                             <div className="provider__item">
                                 <div className="provider__img-container">
                                     <div className="provider__img">
-                                        <Image src={provider.imgSrc} layout="fill" alt={provider.name} />
+                                        <Image src={provider.imgSrc} fill alt={provider.name} />
                                     </div>
                                 </div>
                                 <div className="provider__info">

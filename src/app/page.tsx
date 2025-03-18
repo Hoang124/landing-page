@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
 
-    <div>
+    <div className="w-vw">
       <Header />
       <div className='pt-[67.8px]'>
         <Carousel />

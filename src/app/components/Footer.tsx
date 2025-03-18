@@ -101,7 +101,7 @@ const Footer = () => {
             </div>
             {/* smart phone */}
             {/* <div className="container mx-auto px-4 md:px-6 lg:px-8"> */}
-            <div className="footer-container lg:hidden">
+            <div className="footer__container lg:hidden">
                 {/* Mobile View */}
                 <div className="md:hidden space-y-4">
                     {/* Games Accordion */}
@@ -188,13 +188,13 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="flex w-full">
+                    <div className="flex w-full space-x-4">
                         {/* Bluechip App */}
                         <div className="footer-icon-btn">
                             <Android />
                             <div>
-                                <h3 className="text-lg font-semibold mb-2 text-center md:text-left">Bluechip App</h3>
-                                <p className="text-sm text-gray-400 mb-2 text-center md:text-left">for Android</p>
+                                <h3 className="text-lg font-semibold text-center md:text-left">Bluechip App</h3>
+                                <p className="text-sm text-gray-400 text-center md:text-left">for Android</p>
                             </div>
                         </div>
 

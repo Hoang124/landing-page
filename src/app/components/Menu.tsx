@@ -14,7 +14,7 @@ import Search from "public/assets/search.svg";
 
 const Menu = () => {
     const [width, setWidth] = useState(() =>
-        typeof window !== "undefined" ? window.innerWidth : 0
+        typeof window !== "undefined" ? window.innerWidth : 1024
     );
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const Menu = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const menuItems = width > 1024 ? [
+    const menuItems = width >= 1024 ? [
         {
             title: "Diamond",
             icon: <Diamond />,

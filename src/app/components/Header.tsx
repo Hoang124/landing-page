@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className='header-content'>
-                <div className="flex items-center justify-between p-4 gap-[57px]">
+                <div className="header-nav">
                     <div className='flex items-center gap-1.5'>
                         <Menu />
                         <Logo />
@@ -25,7 +25,7 @@ const Header = () => {
                         <Search />
                         <ul className='flex justify-between gap-4'>
                             {items.map((item, index) => (
-                                <li className='font-medium text-sm leading-[19.6px] tracking-[0.42px] align-middle uppercase' key={index}>{item.name}</li>
+                                <li className='nav-link' key={index}>{item.name}</li>
                             ))}
                         </ul>
                     </div>

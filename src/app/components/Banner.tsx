@@ -36,12 +36,13 @@ const Banner = (props: IProps) => {
             </div>
 
             {/* Right Image */}
-            <div className="content-right -mt-10">
+            <div className="content-right">
                 <Infor className='banner-info' />
                 <Image
                     src={banner.imgSrc}
                     alt="Banner"
                     fill
+                    objectFit="contain"
                 />
             </div>
         </div>
