@@ -43,6 +43,7 @@ const Banner = (props: IProps) => {
                     alt="Banner"
                     fill
                     objectFit="contain"
+                    priority
                 />
             </div>
         </div>

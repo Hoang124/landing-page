@@ -26,16 +26,16 @@ const Footer = () => {
                         GET ANSWERS
                     </button>
                     <div className="flex space-x-4">
-                        <Link href="#" className="text-gray-400 hover:text-white">
+                        <Link href="#">
                             <Telegram />
                         </Link>
-                        <Link href="#" className="text-gray-400 hover:text-white">
+                        <Link href="#">
                             <Facebook />
                         </Link>
-                        <Link href="#" className="text-gray-400 hover:text-white">
+                        <Link href="#">
                             <Instagram />
                         </Link>
-                        <Link href="#" className="text-gray-400 hover:text-white">
+                        <Link href="#">
                             <Twitter />
                         </Link>
                     </div>
