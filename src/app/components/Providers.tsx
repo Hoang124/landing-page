@@ -47,6 +47,21 @@ const providerItems = [
         imgSrc: "/assets/provider8.svg",
         numberOfGame: 199,
     },
+    {
+        name: "Wazdan",
+        imgSrc: "/assets/provider8.svg",
+        numberOfGame: 199,
+    },
+    {
+        name: "Wazdan",
+        imgSrc: "/assets/provider8.svg",
+        numberOfGame: 199,
+    },
+    {
+        name: "Wazdan",
+        imgSrc: "/assets/provider8.svg",
+        numberOfGame: 199,
+    },
 ]
 
 const Providers = () => {
@@ -62,10 +77,11 @@ const Providers = () => {
             <div className="providers-container">
                 <Swiper
                     grabCursor={true}
-                    centeredSlides={true}
+                    // centeredSlides={true}
                     spaceBetween={8}
                     slidesPerView={8}
-                    initialSlide={3}
+                    initialSlide={0}
+                    // loop={true}
                     className="w-full h-full"
                 >
                     {providerItems.map((provider, index) => (
